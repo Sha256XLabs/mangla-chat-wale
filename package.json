@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "chmod +x node_modules/.bin/vite && vite build",
     "preview": "vite preview",
     "obfuscate": "node obfuscator.config.js",
     "build-obfuscated": "npm run build && npm run obfuscate"
