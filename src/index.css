@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-saffron via-curry to-spice;
+  }
+
+  .bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9933' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glow-saffron {
+    box-shadow: 0 0 30px rgba(255, 153, 51, 0.4);
+  }
+
+  .glow-spice {
+    box-shadow: 0 0 30px rgba(196, 30, 58, 0.4);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF9933, #C41E3A);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #E5A83B, #8B0000);
+}
+
+.menu-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.cart-sidebar {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: staggerIn 0.6s ease-out forwards;
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(139, 0, 0, 0.7) 50%, rgba(26, 26, 46, 0.9) 100%);
+}
+
+.food-image {
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .food-image {
+  transform: scale(1.1);
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-saffron to-curry text-charcoal font-bold py-3 px-8 rounded-full;
+  @apply hover:from-curry hover:to-saffron transition-all duration-300;
+  @apply shadow-lg hover:shadow-saffron/50 hover:scale-105;
+}
+
+.btn-whatsapp {
+  @apply bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-8 rounded-full;
+  @apply hover:from-green-600 hover:to-green-500 transition-all duration-300;
+  @apply shadow-lg hover:shadow-green-500/50 hover:scale-105;
+}
+
+.quantity-btn {
+  @apply w-10 h-10 rounded-full bg-saffron/20 text-saffron font-bold text-xl;
+  @apply hover:bg-saffron hover:text-charcoal transition-all duration-200;
+  @apply flex items-center justify-center;
+}
