@@ -70,7 +70,9 @@ export default function Footer() {
             <ul className="space-y-3 sm:space-y-4">
               <li className="flex items-start gap-2 sm:gap-3">
                 <MapPin size={16} sm:size={20} className="text-saffron mt-0.5 sm:mt-1 flex-shrink-0" />
-                <span className="text-white/60 text-xs sm:text-sm">
+                <span
+                href="https://maps.app.goo.gl/chTaJHwHxKts6QX38" 
+                className="text-white/60 hover:text-saffron transition-colors duration-200 text-xs sm:text-sm">
                   Maine Market, Pocket 5,<br />
                   Acharya Niketan, Mayur Vihar,<br />
                   New Delhi, Delhi 110091
@@ -100,7 +102,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-white/40 text-xs sm:text-sm">
               <span>Powered by</span>
-              <span className="text-saffron">WhatsApp</span>
+              <span className="text-saffron">Mangla Chat Wale</span>
             </div>
           </div>
         </div>
